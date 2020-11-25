@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 import Layout from '@/components/Layout'
 import Swiper from '@/components/Slider/Slider'
+/* purgecss start ignore */
 require('swiper/swiper-bundle.css')
-
+/* purgecss end ignore */
 export const ProjectsPageTemplate = ({ data }) => {
   console.log(data)
   const projectsArr = data.project.edges
