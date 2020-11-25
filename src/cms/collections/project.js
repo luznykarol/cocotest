@@ -1,4 +1,4 @@
-const projects = {
+const project = {
   name: 'Project',
   label: 'Project',
   folder: 'content/projects',
@@ -48,4 +48,4 @@ const projects = {
   ],
 }
 
-export default projects
+export default project
