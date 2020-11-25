@@ -39,9 +39,8 @@
   }
 
   p {
-    @apply text-h6  font-para;
-
-    line-height: 26px;
+    @apply text-h6 font-para;
+    line-height: 1.6;
 
     &:not(:last-of-type) {
       @apply mb-5;

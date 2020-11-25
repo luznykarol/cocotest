@@ -23,7 +23,7 @@ export const ProjectsPageTemplate = ({ data }) => {
                       key={project.id}
                       cover={project.frontmatter.cover.childImageSharp.fluid}
                       image={project.frontmatter.image.childImageSharp.fluid}
-                      body={project.frontmatter.body}
+                      text={project.frontmatter.text}
                     />
                   ))}
               </div>
@@ -72,19 +72,19 @@ export const pageQuery = graphql`
             title
             cover {
               childImageSharp {
-                fluid(quality: 70, maxWidth: 500) {
+                fluid(quality: 100, maxWidth: 500) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
             image {
               childImageSharp {
-                fluid(quality: 70, maxWidth: 500) {
+                fluid(quality: 100, maxWidth: 500) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
-            body
+            text
           }
         }
       }

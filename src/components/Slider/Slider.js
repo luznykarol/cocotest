@@ -6,8 +6,8 @@ import Img from 'gatsby-image'
 /* purgecss start ignore */
 import 'swiper/swiper.scss'
 /* purgecss end ignore */
-const Slider = ({ cover, image, body }) => {
-  console.log('body', body)
+const Slider = ({ cover, image, text, icon }) => {
+  console.log('text', text)
   return (
     <Swiper
       spaceBetween={0}
@@ -21,8 +21,9 @@ const Slider = ({ cover, image, body }) => {
         <Img fluid={image} />
       </SwiperSlide>
       <SwiperSlide>
-        {/* <ReactMarkdown source={body} className='projects-markdown' /> */}
-        <p className='projects-markdown'>{body}</p>
+        <ReactMarkdown source={text} className='projects-markdown' />
+        {/* <p className='projects-markdown'>{text}</p> */}
+        <Img></Img>
       </SwiperSlide>
       ...
     </Swiper>

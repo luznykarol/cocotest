@@ -44,8 +44,8 @@ const project = {
       required: false,
     },
     {
-      label: 'Body',
-      name: 'body',
+      label: 'Text',
+      name: 'text',
       widget: 'string',
       required: false,
     },

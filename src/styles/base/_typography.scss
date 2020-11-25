@@ -76,4 +76,9 @@ h6,
 .para-section {
   @apply text-h6 font-para;
   line-height: 1.6;
+
+  @screen 414 {
+    line-height: 1.6;
+    @apply text-h5;
+  }
 }
