@@ -1,28 +1,28 @@
-const path = require("path")
-const tailwind = require("tailwindcss")
+const path = require('path')
+const tailwind = require('tailwindcss')
 
 module.exports = {
   siteMetadata: {
-    baseTitle: "Henlo.",
-    separator: "|",
+    baseTitle: 'Henlo.',
+    separator: '|',
     siteUrl: `localhost:8000`,
-    title: "Wygoda, przyjemność i beztroska",
-    image: "",
-    themeColor: "#fff",
-    keyword: "cocktail scenarios, wesela, eventy, doradztwo barowe",
-    description: "Blazing fast static site with Henlo",
+    title: 'Wygoda, przyjemność i beztroska',
+    image: '',
+    themeColor: '#fff',
+    keyword: 'cocktail scenarios, wesela, eventy, doradztwo barowe',
+    description: 'Blazing fast static site with Henlo',
   },
   plugins: [
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "uploads",
+              name: 'uploads',
             },
           },
           {
@@ -36,42 +36,42 @@ module.exports = {
     },
 
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: "images",
+        name: 'images',
       },
     },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
-        name: "uploads",
+        name: 'uploads',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
-        name: "pages",
+        name: 'pages',
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
-          id: "bwm7ruk",
+          id: 'bwm7ruk',
         },
       },
     },
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         postCssPlugins: [
           tailwind,
-          require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
+          require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
         ],
       },
     },
@@ -81,37 +81,47 @@ module.exports = {
         printRejected: true,
         develop: false, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
+        whitelist: [
+          'ul',
+          'li',
+          'md-figure',
+          'swiper-slide',
+          'swiper-container',
+          'swiper-wrapper',
+        ],
+        whitelistPatterns: [/gatsby-image-wrapper$/],
+        whitelistPatternsChildren: [/md-figure$/],
       },
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: "",
+          trackingId: '',
           anonymize: true,
         },
         facebookPixel: {
-          pixelId: "",
+          pixelId: '',
         },
       },
     },
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        "@": path.join(__dirname, "src"),
-        "~": path.join(__dirname),
-        styles: path.join(__dirname, "src/styles"),
-        img: path.join(__dirname, "static/img"),
+        '@': path.join(__dirname, 'src'),
+        '~': path.join(__dirname),
+        styles: path.join(__dirname, 'src/styles'),
+        img: path.join(__dirname, 'static/img'),
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
         manualInit: true,
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     `gatsby-plugin-advanced-sitemap`,
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
