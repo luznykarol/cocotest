@@ -1,9 +1,6 @@
-import seo from '@/cms/partials/seo'
-
 const projects = {
-  name: 'projects',
-  label: 'Projects',
-  description: 'Projects content',
+  name: 'Project',
+  label: 'Project',
   folder: 'content/projects',
   slug: '{{slug}}',
   templateKey: 'Project',
@@ -39,7 +36,6 @@ const projects = {
       label: 'Order',
       name: 'order',
       widget: 'number',
-      default: '',
       required: false,
     },
     {
@@ -49,7 +45,6 @@ const projects = {
       default: '',
       required: false,
     },
-    seo,
   ],
 }
 
