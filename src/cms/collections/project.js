@@ -46,7 +46,7 @@ const project = {
     {
       label: 'Body',
       name: 'body',
-      widget: 'markdown',
+      widget: 'string',
       default: '',
       required: false,
     },
