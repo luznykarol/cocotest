@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import ReactMarkdown from 'react-markdown'
 import Img from 'gatsby-image'
 // Import Swiper styles
-import 'swiper/swiper.scss'
+// import 'swiper/swiper.scss'
 const Slider = ({ cover, image, body }) => {
   return (
     <Swiper

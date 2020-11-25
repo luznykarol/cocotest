@@ -1,13 +1,15 @@
 .projects-wrap {
   @apply flex flex-wrap w-full;
-
+  margin: 0 -48px;
   .project-item {
   }
 }
 
 .swiper-container {
-  max-width: 400px;
+  @apply bg-white;
+  max-width: calc(calc(33.33333% - 48px));
   width: 100%;
-  height: 400px;
+  height: 428px;
+  // height: 500px;
   margin: 0 24px 48px !important;
 }
