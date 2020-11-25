@@ -6,13 +6,14 @@ const projects = {
   description: 'Projects content',
   folder: 'content/projects',
   slug: '{{slug}}',
+  templateKey: 'Project',
   create: true,
   fields: [
     {
       label: 'Type',
       name: 'type',
       widget: 'hidden',
-      default: 'projects',
+      default: 'project',
     },
     {
       label: 'Title',
@@ -31,6 +32,13 @@ const projects = {
       label: 'Image',
       name: 'image',
       widget: 'image',
+      default: '',
+      required: false,
+    },
+    {
+      label: 'Order',
+      name: 'order',
+      widget: 'number',
       default: '',
       required: false,
     },
