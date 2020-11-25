@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import 'swiper/swiper.scss'
 /* purgecss end ignore */
 const Slider = ({ cover, image, body }) => {
+  console.log('body', body)
   return (
     <Swiper
       spaceBetween={0}

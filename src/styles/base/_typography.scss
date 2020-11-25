@@ -34,6 +34,9 @@ h1,
   @apply text-h1;
 }
 
+.h2 {
+}
+
 h2,
 .title-2 {
   @apply text-h2mobile;
@@ -62,4 +65,15 @@ h5,
 h6,
 .title-6 {
   @apply text-h6;
+}
+
+.h2-section {
+  font-weight: 700;
+  @apply mb-10;
+  line-height: 1.2;
+}
+
+.para-section {
+  @apply text-h6 font-para;
+  line-height: 1.6;
 }

@@ -5,5 +5,8 @@ title: newproject
 cover: /img/stock.png
 image: /img/hero_main.png
 order: 7
+body: >-
+  ppppppppppppppppppppp
 ---
+
 ppppppppppppppppppppp

@@ -47,7 +47,6 @@ const project = {
       label: 'Body',
       name: 'body',
       widget: 'string',
-      default: '',
       required: false,
     },
   ],
