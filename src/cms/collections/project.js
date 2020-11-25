@@ -3,7 +3,6 @@ const project = {
   label: 'Project',
   folder: 'content/projects',
   slug: '{{slug}}',
-  templateKey: 'Project',
   create: true,
   fields: [
     {
@@ -11,6 +10,12 @@ const project = {
       name: 'type',
       widget: 'hidden',
       default: 'project',
+    },
+    {
+      label: 'Layout',
+      name: 'layout',
+      widget: 'hidden',
+      default: 'Project',
     },
     {
       label: 'Title',

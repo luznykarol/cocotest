@@ -62,7 +62,7 @@ export const pageQuery = graphql`
       }
     }
     project: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "Project" } } }
+      filter: { frontmatter: { type: { eq: "project" } } }
       sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
