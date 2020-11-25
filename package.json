@@ -41,9 +41,11 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-markdown": "^4.2.2",
+    "react-pageflip": "^1.0.0",
     "react-scroll-rotate": "0.0.7",
     "react-slick": "^0.25.2",
     "react-svg": "^10.0.25",
+    "swiper": "^6.3.5",
     "universal-cookie": "^4.0.2",
     "uuid": "^3.2.1"
   },
