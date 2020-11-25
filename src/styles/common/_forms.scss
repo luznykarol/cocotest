@@ -1,0 +1,139 @@
+.input,
+.textarea {
+  border-bottom: 0.5px solid;
+  max-width: 100%;
+  @apply border-yellow border-b-2;
+  background: transparent;
+  width: 100%;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &::placeholder {
+    // color: darken(color(bg, 3), 8%);
+  }
+
+  &::-ms-input-placeholder {
+    // color: darken(color(bg, 3), 8%);
+  }
+
+  &:-ms-input-placeholder {
+    // color: darken(color(bg, 3), 8%);
+  }
+
+  &:hover {
+    // border-color: darken(color(primary, 1), 10%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    // border-color: color(primary, 1);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    // background-color: color(bg, 3);
+    // border-color: color(bg, 3);
+  }
+}
+
+.form-container {
+  position: relative;
+  overflow: hidden;
+  &__status {
+    display: block;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    &--active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.label {
+  @apply font-bold text-base text-left text-yellow;
+  padding-left: 2px;
+  margin-bottom: 4px;
+}
+
+.input {
+  @apply text-yellow;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  line-height: 20px;
+  padding: 13px 16px;
+  height: 48px;
+  box-shadow: none;
+
+  &::placeholder {
+    @apply text-yellow;
+  }
+
+  .inline-input {
+    display: inline;
+  }
+}
+
+.textarea {
+  display: block;
+  min-width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  padding: 13px 16px;
+
+  .inline-textarea {
+    display: inline;
+  }
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  &__error {
+    // padding: 13px 16px;
+    left: 15px;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+    @apply font-bold relative text-yellow text-left;
+  }
+}
+
+.form-button {
+  @apply border-yellow text-yellow  mx-auto;
+  border: 1px solid;
+  border-radius: 40px;
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  transition: 0.4s all ease-in;
+
+  &:hover {
+    @apply bg-yellow text-red;
+  }
+
+  // @screen lg {
+  //   @apply mt-32;
+  // }
+}
+.field-grouped {
+  margin-bottom: 15px;
+  > .control {
+    margin-bottom: 0;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
