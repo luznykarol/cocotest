@@ -20,10 +20,7 @@ const Slider = ({ cover, image, body }) => {
         <Img fluid={image} />
       </SwiperSlide>
       <SwiperSlide>
-        <ReactMarkdown
-          source={body}
-          className='markdown-cozy text-yellow markdown__scenarios'
-        />
+        <ReactMarkdown source={body} className='projects-markdown' />
       </SwiperSlide>
       ...
     </Swiper>
