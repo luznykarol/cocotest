@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 import Layout from '@/components/Layout'
 import Img from 'gatsby-image'
+import Background from 'gatsby-background-image'
 import ReactMarkdown from 'react-markdown'
 import { ScrollRotate } from 'react-scroll-rotate'
 import { graphql } from 'gatsby'
@@ -73,22 +74,28 @@ export const AboutPageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className='events bg-white py-24'>
-          <div className='container'>
-            <div className='col-container flex flex-col-reverse 900:flex-row 900:justify-between'>
-              <div className='col'>
-                <Img fluid={pageData.eventsimg.childImageSharp.fluid} />
-              </div>
-              <div className='col flex items-center'>
-                <ReactMarkdown
-                  className='markdown__events  markdown-cozy'
-                  source={pageData.events}
-                />
+
+        <section className='events bg-white' id='events'>
+          <div className='half-section'>
+            <div className='half-section__col'>
+              <Background
+                className='half-section__image'
+                fluid={pageData.eventsimg.childImageSharp.fluid}
+              />
+            </div>
+            <div className='half-section__col'>
+              <div className='half-section__content'>
+                <div className=''>
+                  <ReactMarkdown
+                    className='markdown__events  markdown-cozy'
+                    source={pageData.events}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section className='events bg-cream  py-24'>
+        <section className='events bg-cream  py-24' id='consultancy'>
           <div className='container'>
             <h2 className='text-green special font-cozy'>Doradztwo barowe</h2>
             <div className='col-container flex flex-col 900:flex-row 900:justify-between'>
@@ -109,31 +116,27 @@ export const AboutPageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className='events bg-white py-24'>
-          <div className='container'>
-            <h2 className='text-black special font-cozy'>
-              Warsztaty koktajlowe
-            </h2>
-            <div className='col-container flex flex-col-reverse 900:flex-row 900:justify-between'>
-              <div className='col'>
-                {' '}
-                <ReactMarkdown
-                  className='markdown__events  markdown-cozy'
-                  source={pageData.workshops}
-                />
-              </div>
-              <div className='col flex items-center'>
-                <ReactMarkdown
-                  className='markdown__events  markdown-cozy'
-                  source={pageData.workshopsright}
-                />
+        <section className='events bg-white' id='workshops'>
+          <div className='half-section'>
+            <div className='half-section__col'>
+              <Img
+                className='half-section__image'
+                fluid={pageData.eventsimg.childImageSharp.fluid}
+              />
+            </div>
+            <div className='half-section__col'>
+              <div className='half-section__content'>
+                <div className=''>
+                  <h2 className='text-black special font-cozy'>
+                    Warsztaty koktajlowe
+                  </h2>
+                  <ReactMarkdown
+                    className='markdown__events  markdown-cozy'
+                    source={pageData.workshopsright}
+                  />
+                </div>
               </div>
             </div>
-            <figure className='line-full' />
-            <ReactMarkdown
-              className='markdown-cozy markdown__consultancybar text-red'
-              source={pageData.consultancybar}
-            />
           </div>
         </section>
       </div>
@@ -164,7 +167,7 @@ export const pageQuery = graphql`
         title
         herobackground {
           childImageSharp {
-            fluid(quality: 70, maxWidth: 1900) {
+            fluid(quality: 100, maxWidth: 1900) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

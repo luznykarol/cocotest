@@ -64,14 +64,14 @@ const Footer = () => {
                 href={`tel:${footerData.contact.mail}`}>
                 {/* <MailIcon /> */}
                 {/* <p className='ml-2'>{footerData.contact.mail}</p> */}
-                <p class='font-medium'>{footerData.contact.mail}</p>
+                <p className='font-medium'>{footerData.contact.mail}</p>
               </a>
               <a
                 className='flex items-center mt-5 '
                 href={`tel:${footerData.contact.phone}`}>
                 {/* <PhoneIcon /> */}
                 {/* <p className='ml-2'>{footerData.contact.phone}</p> */}
-                <p class='font-medium'>{footerData.contact.phone}</p>
+                <p className='font-medium'>{footerData.contact.phone}</p>
               </a>
             </div>
             <div className='flex items-center mt-5'>

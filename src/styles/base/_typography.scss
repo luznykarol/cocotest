@@ -39,7 +39,7 @@ h1,
 
 h2,
 .title-2 {
-  @apply text-h2mobile;
+  @apply text-h2mobile font-cozy;
 
   @screen 1070 {
     @apply text-h2;

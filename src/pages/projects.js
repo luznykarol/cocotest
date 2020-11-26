@@ -4,7 +4,7 @@ import ReactSVG from 'react-svg'
 import Layout from '@/components/Layout'
 import Swiper from '@/components/Slider/Slider'
 /* purgecss start ignore */
-require('swiper/swiper-bundle.css')
+// require('swiper/swiper-bundle.css')
 /* purgecss end ignore */
 export const ProjectsPageTemplate = ({ data }) => {
   console.log(data)
@@ -15,7 +15,8 @@ export const ProjectsPageTemplate = ({ data }) => {
       <div className='flex items-center justify-center'>
         <div className='container-lg px-5 sm:px-10'>
           <section className='w-full -100 my-20 py-20 '>
-            <div className='text-center mx-auto'>
+            <div className=' mx-auto'>
+              <h2 className='h2-section '>Projekty</h2>
               <div className='projects-wrap'>
                 {projectsArr &&
                   projectsArr.map(({ node: project }) => (
@@ -36,11 +37,8 @@ export const ProjectsPageTemplate = ({ data }) => {
 }
 
 const ProjectsPage = ({ data }) => {
-  //   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
-      {/* <WwdPageTemplate data={frontmatter} /> */}
       <ProjectsPageTemplate data={data} />
     </Layout>
   )

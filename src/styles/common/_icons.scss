@@ -9,18 +9,76 @@
 }
 
 .icon-facebook {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .icon-instagram {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .icon-footer {
   svg {
     width: 100%;
     height: 100%;
+  }
+}
+
+.icon-arrow-right {
+  width: 60px;
+  height: 40px;
+  @apply ml-3;
+  transition: 0.4s all ease-in;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.whatwedo-link {
+  cursor: pointer;
+
+  @apply flex items-center mb-2;
+
+  &:hover {
+    .icon-arrow-right {
+      transform: translateX(10px);
+    }
+  }
+  .h2-section {
+    @apply text-h3;
+  }
+
+  @media (min-width: 850px) {
+    .h2-section {
+      font-size: 2.875rem;
+    }
+  }
+}
+
+.half-section {
+  @apply flex;
+
+  &__col {
+    width: 50%;
+    @apply flex justify-center items-center;
+  }
+  &__content {
+    padding: 40px;
+    @apply flex justify-center items-center;
+  }
+
+  &__image {
+    height: 890px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .gatsby-image-wrapper {
+      height: 100%;
+      width: 100%;
+    }
   }
 }

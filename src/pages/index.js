@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 import Layout from '@/components/Layout'
@@ -8,10 +8,12 @@ import ReactMarkdown from 'react-markdown'
 import { ScrollRotate } from 'react-scroll-rotate'
 import Helmet from 'react-helmet'
 import SEO from '@/helpers/SEOHelper.js'
+import Swiper from '@/components/Slider/Slider'
 
 export const HomePageTemplate = ({ data }) => {
   const pageData = data.markdownRemark.frontmatter
   const seo = data.markdownRemark.frontmatter.seo
+  const projectsArr = data.project.edges
   return (
     <>
       <Helmet>
@@ -27,30 +29,24 @@ export const HomePageTemplate = ({ data }) => {
       <div className='bg-yellow mt-8'>
         <section className='hero pb-20'>
           <div className='container-lg px-0 900:px-30'>
+            {/* <div className='container-lg px-0 900:px-30'> */}
             <Img
               fluid={pageData.herobackground.childImageSharp.fluid}
               className='hero__main--bg'></Img>
           </div>
-          <div className='container-lg '>
-            <div className='hero-info-wrap'>
-              <div className='flex flex-col-reverse 900:flex-row 900:justify-between '>
-                <div className='flex flex-col-reverse 900:flex-col'>
+          <div className='container '>
+            <div className='hero-info-wrap pt-20'>
+              <h2 className='h2-section text-red'>O nas</h2>
+              <div className='col-container flex flex-col 900:flex-row 900:justify-between '>
+                <div className='col'>
                   <ReactMarkdown
-                    className='herobackgroundsignature mt-5 font-bold'
-                    source={pageData.herobackgroundsignature}
-                  />
-                  <ReactMarkdown
-                    className='aboutleft markdown-wrap std-para 900:mt-12'
+                    className='text-red markdown-wrap markdown-cozy '
                     source={pageData.aboutleft}
                   />
                 </div>
-                <div className='col md:pt-13 pt-4'>
-                  <ScrollRotate animationDuration={1} loops={1} to={1420}>
-                    <ReactSVG className='' src='../../img/svg/spinner.svg' />
-                  </ScrollRotate>
-
+                <div className='col'>
                   <ReactMarkdown
-                    className='pt-20 aboutright markdown-cozy'
+                    className=' markdown-cozy text-red'
                     source={pageData.aboutright}
                   />
                 </div>
@@ -58,33 +54,64 @@ export const HomePageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className='about-bar bg-white py-20'>
+        <section className='about-bar bg-white py-24'>
           <div className='container'>
             <div className='flex flex-col md:flex-row md:justify-between md:items-center '>
               <div className='flex flex-col md:flex-row md:items-center items-start'>
-                <p className='font-bold mb-30 md:mb-0 md:mr-16 '>
-                  {pageData.abouthelper}
-                </p>
-                <ReactMarkdown
-                  className='aboutbar font-cozy leading-64 font-bold '
-                  source={pageData.aboutbar}
-                />
+                <h2 className='h2-section mb-0'>Co Robimy?</h2>
               </div>
-              <ReactSVG
-                className='flex justify-end mt-30 md:mt-0'
-                src='../../img/svg/arrowRight.svg'
-              />
+              <div className=''>
+                <Link to='/about/#workshops' className='whatwedo-link'>
+                  <h2 className='h2-section mb-0'>Warsztaty i Szkolenia</h2>
+                  <ReactSVG
+                    className='icon-arrow-right '
+                    src='../../img/svg/arrowRight.svg'
+                  />
+                </Link>
+                <Link className='whatwedo-link'>
+                  <h2 className='h2-section mb-0'>Integracja Online</h2>
+                  <ReactSVG
+                    className='icon-arrow-right '
+                    src='../../img/svg/arrowRight.svg'
+                  />
+                </Link>
+                <Link className='whatwedo-link'>
+                  <h2 className='h2-section mb-0'>Wesela i Eventy</h2>
+                  <ReactSVG
+                    className='icon-arrow-right '
+                    src='../../img/svg/arrowRight.svg'
+                  />
+                </Link>
+                <Link to='/about/#consultancy' className='whatwedo-link'>
+                  <h2 className='h2-section mb-0'>Doradztwo Barowe</h2>
+                  <ReactSVG
+                    className='icon-arrow-right '
+                    src='../../img/svg/arrowRight.svg'
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
-        <section className='projects bg-cream py-20' id='projects'>
+        <section className='projects bg-cream py-24' id='projects'>
           <div className='container'>
             <div className='flex items-center'>
-              <ReactSVG src='../../img/svg/CCC-sygnet.svg' />
-              <figure className='line'></figure>
-              <p>{pageData.projectshelper}</p>
+              <h2 className='h2-section'>{pageData.projectshelper}</h2>
+              {/* <figure className='line'></figure>
+              <ReactSVG src='../../img/svg/CCC-sygnet.svg' /> */}
             </div>
-            <div className='collage-wrap pt-8'>
+            <div className='projects-wrap'>
+              {projectsArr &&
+                projectsArr.map(({ node: project }) => (
+                  <Swiper
+                    key={project.id}
+                    cover={project.frontmatter.cover.childImageSharp.fluid}
+                    image={project.frontmatter.image.childImageSharp.fluid}
+                    text={project.frontmatter.text}
+                  />
+                ))}
+            </div>
+            {/* <div className='collage-wrap pt-8'>
               <div className='flex flex-col md:flex-row'>
                 <div className='collage-col flex flex-col items-center md:w-2/5 md:items-end'>
                   {' '}
@@ -108,7 +135,7 @@ export const HomePageTemplate = ({ data }) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <ReactMarkdown
               className='projectsbar text-center text-yellow font-cozy leading-64 font-bold pt-34'
@@ -204,6 +231,34 @@ export const pageQuery = graphql`
         seo {
           description
           title
+        }
+      }
+    }
+    project: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "project" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            cover {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            image {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            text
+          }
         }
       }
     }

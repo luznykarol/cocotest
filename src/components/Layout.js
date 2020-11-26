@@ -6,7 +6,7 @@ import { siteMetadata } from '~/gatsby-config'
 import { useLocation } from '@reach/router'
 import '@/styles/main.scss'
 /* purgecss start ignore */
-import 'swiper/swiper.scss'
+// import 'swiper/swiper.scss'
 /* purgecss end ignore */
 
 import SEO from '@/helpers/SEOHelper'
@@ -14,6 +14,7 @@ import SEO from '@/helpers/SEOHelper'
 const TemplateWrapper = ({ children }) => {
   const location = useLocation()
   const pathname = location.pathname
+  console.log('sciezka', pathname)
   return (
     <div>
       <Helmet>
@@ -48,9 +49,13 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <div
         className={` ${
-          pathname == '/'
+          pathname == '/projects'
+            ? 'relative h-screen bg-white'
+            : '/'
             ? 'relative h-screen bg-yellow'
-            : 'relative h-screen bg-green'
+            : '/about'
+            ? 'relative h-screen bg-green'
+            : false
         }`}>
         <Navbar />
         <main className='wrapper 1070:pt-hero pt-0'>{children}</main>

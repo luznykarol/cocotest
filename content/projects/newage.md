@@ -3,7 +3,7 @@ type: project
 layout: Project
 title: Newagedisco
 cover: /img/projects/cover-newage.png
-image: /img/projects/img-newage.png
+image: /img/projects/img-newage.jpg
 order: 4
 text: >-
   Światła stroboskopów, brokat spływa mi z ramion, popijam Sex On The Beach do nieśmiertelnego disco...

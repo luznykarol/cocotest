@@ -1,7 +1,7 @@
 ---
 type: page
 title: Cozy Cocktail Collective
-herobackground: /img/hero_main.png
+herobackground: /img/hero_main.jpg
 herobackgroundsignature: |-
   Kasia Czalej
 

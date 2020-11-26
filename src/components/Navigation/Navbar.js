@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-import ReactSVG from "react-svg"
-import { useLocation } from "@reach/router"
-import Burger from "@/components/Navigation/Burger"
-import scrollTo from "gatsby-plugin-smoothscroll"
+import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
+import ReactSVG from 'react-svg'
+import { useLocation } from '@reach/router'
+import Burger from '@/components/Navigation/Burger'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const Navbar = () => {
   const location = useLocation()
@@ -14,96 +14,102 @@ const Navbar = () => {
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "initial"
+      document.body.style.overflow = 'initial'
     }
 
-    const height = document.getElementById("header").clientHeight
+    const height = document.getElementById('header').clientHeight
     setHeaderHeight(height)
 
-    typeof window !== "undefined" &&
-      window.addEventListener("scroll", changeBackground)
+    typeof window !== 'undefined' &&
+      window.addEventListener('scroll', changeBackground)
 
-    return () => window.removeEventListener("scroll", changeBackground)
+    return () => window.removeEventListener('scroll', changeBackground)
   }, [])
 
   const changeBackground = () => {
-    typeof window !== "undefined" && window.scrollY > headerHeight
+    typeof window !== 'undefined' && window.scrollY > headerHeight
       ? setNavBar(true)
       : setNavBar(false)
   }
 
   return (
     <>
-      <header className=" container-lg" id="header">
-        <nav className="navigation">
-          <div className="navigation__inner flex justify-between 1070:justify-end items-start">
+      <header className=' container-lg' id='header'>
+        <nav className='navigation'>
+          <div className='navigation__inner flex justify-between 1070:justify-end items-start'>
             <>
               <ReactSVG
-                className="navigation__logo"
-                src="../../img/svg/CCC-logo-full.svg"></ReactSVG>
+                className='navigation__logo'
+                src='../../img/svg/CCC-logo-full.svg'></ReactSVG>
               <div
                 className={
-                  "navigation__list" +
-                  " " +
-                  (open ? "navigation__list--open" : "navigation__list--closed")
+                  'navigation__list' +
+                  ' ' +
+                  (open ? 'navigation__list--open' : 'navigation__list--closed')
                 }>
-                <div className="flex flex-col 1070:flex-row ">
-                  {" "}
+                <div className='flex flex-col 1070:flex-row '>
+                  {' '}
                   <Link
                     onClick={() => setOpen(false)}
-                    to="/"
-                    className="navigation__link">
+                    to='/'
+                    className='navigation__link'>
                     O nas
                   </Link>
                   <Link
                     onClick={() => setOpen(false)}
-                    to="/about"
-                    className="navigation__link">
+                    to='/about'
+                    className='navigation__link'>
                     Co robimy
                   </Link>
-                  {pathname == "/" ? (
+                  <Link
+                    onClick={() => setOpen(false)}
+                    to='/projects'
+                    className='navigation__link'>
+                    Projekty
+                  </Link>
+                  {pathname == '/' ? (
                     <a
-                      className="navigation__link"
+                      className='navigation__link'
                       onClick={() => {
                         setOpen(false)
-                        scrollTo("#projects")
+                        scrollTo('#projects')
                       }}>
                       Realizacje
                     </a>
                   ) : (
                     <Link
-                      to="/#projects"
+                      to='/#projects'
                       onClick={() => {
                         setOpen(false)
                       }}
                       // onClick={() => scrollTo('/#services')}
-                      className="navigation__link">
+                      className='navigation__link'>
                       Realizacje
                     </Link>
                   )}
                   <a
-                    className="navigation__link"
+                    className='navigation__link'
                     onClick={() => {
                       setOpen(false)
-                      scrollTo("#contact")
+                      scrollTo('#contact')
                     }}>
                     Kontakt
                   </a>
                 </div>
 
-                <div className="navigation__list--social">
+                <div className='navigation__list--social'>
                   <a
-                    href="https://www.instagram.com/cozycocktailcollective/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href='https://www.instagram.com/cozycocktailcollective/'
+                    target='_blank'
+                    rel='noopener noreferrer'>
                     Instagram
                   </a>
                   <a
-                    href="https://www.facebook.com/cozycocktailcollective"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href='https://www.facebook.com/cozycocktailcollective'
+                    target='_blank'
+                    rel='noopener noreferrer'>
                     Facebook
                   </a>
                   {/* <a

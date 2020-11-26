@@ -1,8 +1,8 @@
 ---
-type: projects
+type: project
 title: cocktail art
-cover: /img/projects/cover-boozebakery.png
-image: /img/projects/img-boozebakery.png
+cover: /img/projects/cover-boozebakery.jpg
+image: /img/projects/img-boozebakery.jpg
 order: 6
 text: >-
   Życie jest jak menu degustacyjne - najlepsze zawsze zostawia na koniec. I tak też robimy my - nasz ostatni scenariusz koktajlowy jest podróżą przez najsmakowitsze desery z całego świata.
