@@ -1,22 +1,22 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import InputField from "./partials/InputField"
-import TextField from "./partials/TextField"
+import InputField from './partials/InputField'
+import TextField from './partials/TextField'
 
 const encode = (data) => {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
 }
 
 export default class ContactForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: "",
-      email: "",
-      cityName: "",
-      eventType: "",
+      name: '',
+      email: '',
+      cityName: '',
+      eventType: '',
       acceptance: false,
       emailValid: true,
       nameValid: true,
@@ -53,11 +53,11 @@ export default class ContactForm extends Component {
 
   clearForm() {
     this.setState({
-      email: "",
-      name: "",
-      acceptance: "",
-      cityName: "",
-      eventType: "",
+      email: '',
+      name: '',
+      acceptance: '',
+      cityName: '',
+      eventType: '',
     })
   }
 
@@ -66,10 +66,10 @@ export default class ContactForm extends Component {
     let nameValid = this.state.nameValid
 
     switch (fieldName) {
-      case "email":
+      case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
         break
-      case "name":
+      case 'name':
         nameValid = value.length >= 1
         break
       default:
@@ -98,13 +98,13 @@ export default class ContactForm extends Component {
       this.setState({
         formValid: this.state.emailValid && this.state.nameValid,
       })
-      fetch("/", {
-        method: "POST",
+      fetch('/', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: encode({
-          "form-name": contactTitle,
+          'form-name': contactTitle,
           ...this.state,
         }),
       })
@@ -123,16 +123,16 @@ export default class ContactForm extends Component {
     const contactTitle = this.props.formTitle
     const statusClass =
       this.state.isSending || this.state.isSend
-        ? "form-container__status form-container__status--active"
-        : "form-container__status"
+        ? 'form-container__status form-container__status--active'
+        : 'form-container__status'
     const sendingStatus = !this.state.isSend ? (
-      <div className="loading-dots loading-dots--blue">
-        <div className="loading-dots--dot"></div>
-        <div className="loading-dots--dot"></div>
-        <div className="loading-dots--dot"></div>
+      <div className='loading-dots loading-dots--blue'>
+        <div className='loading-dots--dot'></div>
+        <div className='loading-dots--dot'></div>
+        <div className='loading-dots--dot'></div>
       </div>
     ) : (
-      <p className="text-yellow text-center text-h5 ">
+      <p className='text-yellow text-center text-h5 '>
         Dziękujemy za wiadomość!
       </p>
     )
@@ -141,18 +141,18 @@ export default class ContactForm extends Component {
       <form
         // noValidate
         onSubmit={this.handleFormSubmit}
-        className="form-container"
+        className='form-container'
         name={contactTitle}
-        data-netlify="true">
+        data-netlify='true'>
         {this.state.isSend ? (
           <>
-            <p className="text-yellow text-center text-h5 font-cozy ">
+            <p className='text-yellow text-center text-h5 font-cozy '>
               Dziękujemy za wiadomość,
               <br /> Do usłyszenia!
             </p>
-            <div className="control">
+            <div className='control'>
               <button
-                className="form-button mt-20"
+                className='form-button mt-20'
                 onClick={() => this.setState({ isSend: !this.state.isSend })}>
                 Powrót
               </button>
@@ -160,77 +160,77 @@ export default class ContactForm extends Component {
           </>
         ) : (
           <>
-            <div className="field-grouped">
+            <div className='field-grouped'>
               <InputField
-                type="email"
-                name="email"
-                placeholder="Adres e-mail"
-                label="Adres e-mail"
+                type='email'
+                name='email'
+                placeholder='Adres e-mail'
+                label='Adres e-mail'
                 // required={true}
                 onChange={this.handleChange}
                 error={this.state.emailValid}
-                errorMessage="Wpisz poprawny adres email"
+                errorMessage='Wpisz poprawny adres email'
               />
             </div>
             <div>
-              <input type="hidden" name="form-name" value="contact" />
+              <input type='hidden' name='form-name' value='contact' />
             </div>
-            <div className="field-grouped">
+            <div className='field-grouped'>
               <InputField
-                type="text"
-                name="name"
-                placeholder="Imię i nazwisko"
-                label="Imię i nazwisko"
+                type='text'
+                name='name'
+                placeholder='Imię i nazwisko'
+                label='Imię i nazwisko'
                 // required={true}
                 onChange={this.handleChange}
                 error={this.state.nameValid}
-                errorMessage="Wpisz swoje imię"
+                errorMessage='Wpisz swoje imię'
               />
             </div>
-            <div className="field-grouped">
+            <div className='field-grouped'>
               <InputField
-                type="text"
-                name="city"
-                placeholder="Miasto"
-                label="Miasto"
+                type='text'
+                name='city'
+                placeholder='Miasto'
+                label='Miasto'
                 onChange={this.handleChange}
               />
             </div>
-            <div className="field-grouped">
+            <div className='field-grouped'>
               <InputField
-                type="text"
-                name="eventType"
+                type='text'
+                name='eventType'
                 // required={true}
-                placeholder="Rodzaj organizowanego eventu"
-                label="Rodzaj organizowanego eventu"
+                placeholder='Rodzaj organizowanego eventu'
+                label='Rodzaj organizowanego eventu'
                 onChange={this.handleChange}
               />
             </div>
-            <div className="flex items-center">
+            <div className='flex items-center'>
               <div>
                 <input
-                  className="styled-checkbox"
-                  name="acceptance"
-                  id="acceptance"
-                  type="checkbox"
+                  className='styled-checkbox'
+                  name='acceptance'
+                  id='acceptance'
+                  type='checkbox'
                   // required="required"
-                  required="required"
+                  required='required'
                   checked={this.state.acceptance}
                   onChange={this.handleCheckbox}
                 />
-                <label htmlFor="acceptance"></label>
+                <label htmlFor='acceptance'></label>
               </div>
-              <p className="ml-4 text-xxs text-yellow">
+              <p className='ml-4 text-xxs text-yellow'>
                 Potwierdzam, że jestem świadomy, że Cozy Cocktail Collective
                 wykorzystuje moje dane na cele marketingu bezpośredniego.
               </p>
             </div>
             <div className={statusClass}>{sendingStatus}</div>
-            <div className="control">
+            <div className='control'>
               <button
-                className="form-button mt-20"
+                className='form-button mt-20'
                 disabled={this.state.isSending}
-                role="submit">
+                role='submit'>
                 Wyślij zgłoszenie
               </button>
             </div>

@@ -6,6 +6,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
+      '375': '375px',
       '414': '414px',
       sm: '640px',
       '<md': { max: '767.99px' },
@@ -13,6 +14,7 @@ module.exports = {
       '900': '900px',
       lg: '1024px',
       '1070': '1070px',
+      '1200': '1200px',
       xl: '1280px',
       dark: { raw: '(prefers-color-scheme: dark)' },
     },
@@ -142,7 +144,7 @@ module.exports = {
       default: '1',
     },
     fontFamily: {
-      para: ['brandon-grotesque', 'sans-serif'],
+      para: ['basier_circleregular', 'sans-serif'],
       cozy: ['Alpina', 'serif'],
       'cozy-italic': ['Alpina Italic', 'serif'],
       sans: [

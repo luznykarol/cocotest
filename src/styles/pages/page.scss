@@ -195,21 +195,21 @@
   }
 }
 
-.flex-col {
-  .col {
-    &:first-of-type {
-      @apply pb-24;
-    }
-  }
-}
+// .flex-col {
+//   .col {
+//     &:first-of-type {
+//       @apply pb-20;
+//     }
+//   }
+// }
 
-.flex-col-reverse {
-  .col {
-    &:last-of-type {
-      @apply pb-24;
-    }
-  }
-}
+// .flex-col-reverse {
+//   .col {
+//     &:last-of-type {
+//       @apply pb-20;
+//     }
+//   }
+// }
 .col-container {
   margin: 0 -15px;
 

@@ -30,7 +30,12 @@ const Slider = ({ cover, image, text, icon }) => {
         <Img fluid={image} />
       </SwiperSlide>
       <SwiperSlide>
-        <ReactMarkdown source={text} className='projects-markdown' />
+        <div className='project-content'>
+          <ReactMarkdown source={text} className='projects-markdown' />
+          <div className='post-spinner'>
+            <img src='/img/projects/post-spinner.jpg' />
+          </div>
+        </div>
       </SwiperSlide>
       ...
     </Swiper>

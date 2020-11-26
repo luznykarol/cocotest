@@ -27,7 +27,7 @@ export const HomePageTemplate = ({ data }) => {
         <title>{SEO.title(seo.title)}</title>
       </Helmet>
       <div className='bg-yellow mt-8'>
-        <section className='hero pb-20'>
+        <section className='hero '>
           <div className='container-lg px-0 900:px-30'>
             {/* <div className='container-lg px-0 900:px-30'> */}
             <Img
@@ -35,7 +35,7 @@ export const HomePageTemplate = ({ data }) => {
               className='hero__main--bg'></Img>
           </div>
           <div className='container '>
-            <div className='hero-info-wrap pt-20'>
+            <div className='hero-info-wrap py-24'>
               <h2 className='h2-section text-red'>O nas</h2>
               <div className='col-container flex flex-col 900:flex-row 900:justify-between '>
                 <div className='col'>
@@ -60,7 +60,7 @@ export const HomePageTemplate = ({ data }) => {
               <div className='flex flex-col md:flex-row md:items-center items-start'>
                 <h2 className='h2-section mb-0'>Co Robimy?</h2>
               </div>
-              <div className=''>
+              <div className='mt-10'>
                 <Link to='/about/#workshops' className='whatwedo-link'>
                   <h2 className='h2-section mb-0'>Warsztaty i Szkolenia</h2>
                   <ReactSVG
@@ -75,7 +75,7 @@ export const HomePageTemplate = ({ data }) => {
                     src='../../img/svg/arrowRight.svg'
                   />
                 </Link>
-                <Link className='whatwedo-link'>
+                <Link to='/about/#weddings' className='whatwedo-link'>
                   <h2 className='h2-section mb-0'>Wesela i Eventy</h2>
                   <ReactSVG
                     className='icon-arrow-right '
@@ -97,8 +97,6 @@ export const HomePageTemplate = ({ data }) => {
           <div className='container'>
             <div className='flex items-center'>
               <h2 className='h2-section'>{pageData.projectshelper}</h2>
-              {/* <figure className='line'></figure>
-              <ReactSVG src='../../img/svg/CCC-sygnet.svg' /> */}
             </div>
             <div className='projects-wrap'>
               {projectsArr &&
@@ -111,51 +109,24 @@ export const HomePageTemplate = ({ data }) => {
                   />
                 ))}
             </div>
-            {/* <div className='collage-wrap pt-8'>
-              <div className='flex flex-col md:flex-row'>
-                <div className='collage-col flex flex-col items-center md:w-2/5 md:items-end'>
-                  {' '}
-                  <Img
-                    className='collage-item collage-1'
-                    fluid={pageData.collage1.childImageSharp.fluid}
-                  />
-                  <Img
-                    className='collage-item collage-3'
-                    fluid={pageData.collage3.childImageSharp.fluid}
-                  />
-                </div>
-                <div className='collage-col flex flex-col items-center md:w-3/5 md:items-start'>
-                  <Img
-                    className='collage-item collage-2'
-                    fluid={pageData.collage2.childImageSharp.fluid}
-                  />
-                  <Img
-                    className='collage-item collage-4'
-                    fluid={pageData.collage4.childImageSharp.fluid}
-                  />
-                </div>
-              </div>
-            </div> */}
-
-            <ReactMarkdown
+            {/* <ReactMarkdown
               className='projectsbar text-center text-yellow font-cozy leading-64 font-bold pt-34'
               source={pageData.projectsbar}
             />
             <ReactMarkdown
               className='projectsbarmobile text-center text-yellow font-cozy leading-64 font-bold pt-34'
               source={pageData.projectsbarmobile}
-            />
-            <div className='mx-auto pt-10 flex justify-center'>
-              {' '}
+            /> */}
+            <div className='mx-auto pt-16 flex justify-center'>
               <ScrollRotate animationDuration={1} loops={100} to={1420}>
                 <ReactSVG src='../../img/svg/spinner.svg' />
               </ScrollRotate>
             </div>
 
-            <ReactMarkdown
+            {/* <ReactMarkdown
               className='projectstext pt-10'
               source={pageData.projectstext}
-            />
+            /> */}
           </div>
         </section>
       </div>

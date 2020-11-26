@@ -49,13 +49,9 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <div
         className={` ${
-          pathname == '/projects'
-            ? 'relative h-screen bg-white'
-            : '/'
+          pathname == '/'
             ? 'relative h-screen bg-yellow'
-            : '/about'
-            ? 'relative h-screen bg-green'
-            : false
+            : 'relative h-screen bg-green'
         }`}>
         <Navbar />
         <main className='wrapper 1070:pt-hero pt-0'>{children}</main>

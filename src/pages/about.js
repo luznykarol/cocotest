@@ -44,10 +44,10 @@ export const AboutPageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className='topsection py-24'>
+        <section className='topsection py-24' id='weddings'>
           <div className='container'>
             <div className='col-container flex flex-col 900:flex-row 900:justify-between'>
-              <div className='col pb-0 900:pb-24'>
+              <div className='col '>
                 <ReactMarkdown
                   className='markdown-cozy text-yellow markdown__weddings'
                   source={pageData.weddings}
@@ -74,27 +74,30 @@ export const AboutPageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-
-        <section className='events bg-white' id='events'>
+        <section className='events bg-white' id='workshops'>
           <div className='half-section'>
             <div className='half-section__col'>
-              <Background
+              <Img
                 className='half-section__image'
-                fluid={pageData.eventsimg.childImageSharp.fluid}
+                fluid={pageData.consultancyimg.childImageSharp.fluid}
               />
             </div>
             <div className='half-section__col'>
               <div className='half-section__content'>
                 <div className=''>
+                  <h2 className='text-black special font-cozy'>
+                    Warsztaty koktajlowe
+                  </h2>
                   <ReactMarkdown
                     className='markdown__events  markdown-cozy'
-                    source={pageData.events}
+                    source={pageData.workshopsright}
                   />
                 </div>
               </div>
             </div>
           </div>
         </section>
+
         <section className='events bg-cream  py-24' id='consultancy'>
           <div className='container'>
             <h2 className='text-green special font-cozy'>Doradztwo barowe</h2>
@@ -116,7 +119,7 @@ export const AboutPageTemplate = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className='events bg-white' id='workshops'>
+        <section className='events bg-white' id='events'>
           <div className='half-section'>
             <div className='half-section__col'>
               <Img
@@ -127,12 +130,9 @@ export const AboutPageTemplate = ({ data }) => {
             <div className='half-section__col'>
               <div className='half-section__content'>
                 <div className=''>
-                  <h2 className='text-black special font-cozy'>
-                    Warsztaty koktajlowe
-                  </h2>
                   <ReactMarkdown
                     className='markdown__events  markdown-cozy'
-                    source={pageData.workshopsright}
+                    source={pageData.events}
                   />
                 </div>
               </div>

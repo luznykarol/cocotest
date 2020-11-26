@@ -63,12 +63,6 @@ const Navbar = () => {
                     className='navigation__link'>
                     Co robimy
                   </Link>
-                  <Link
-                    onClick={() => setOpen(false)}
-                    to='/projects'
-                    className='navigation__link'>
-                    Projekty
-                  </Link>
                   {pathname == '/' ? (
                     <a
                       className='navigation__link'

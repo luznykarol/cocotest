@@ -20,7 +20,7 @@ scenarios: >-
   ## Cocktail Scenarios
 
   Nasze scenariusze to skrupulatnie stworzone menu, które w spójnym stylu łączą ze sobą koktajle wytrawne i słodkie, długie i krótkie, intensywne i orzeźwiające. Dzięki temu każdy z gości Twojego wydarzenia będzie mógł odnaleźć coś dla siebie. Każdy z koktajli bazujemy na najwyższej jakości alkoholach, a wszystkie składniki przygotowujemy sami według naszych receptur w duchu zero waste. Jeżeli nie znalazłeś scenariusza dla siebie - nie martw się - z wielką przyjemnością napiszemy spersonalizowane menu dostosowane do Twoich wizji i potrzeb.
-eventsimg: /img/events.png
+eventsimg: /img/about-img-2.jpg
 events: >-
   ## Eventy 
 
@@ -42,7 +42,7 @@ workshopsright: >-
 
   Każde spotkanie jest wyjątkowe, a przygotowanie go jest jak szycie na
   miarę. Dlatego też, koszt każdego wydarzenia ustalamy indywidualnie na podstawie potrzeb i preferencji klienta.
-consultancyimg: /img/stock.png
+consultancyimg: /img/about-img-1.jpg
 consultancy: >-
   Tworzenie barów od podszewki to dla nas największa przyjemność. Pomożemy Ci zarówno jeżeli masz już funkcjonujący bar i chcesz usprawnić działalnośc tej częsci restauracji, a także jeśli potrzebujesz doradztwa przy całkowicie nowym projekcie
 

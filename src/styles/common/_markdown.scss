@@ -39,7 +39,7 @@
   }
 
   p {
-    @apply text-h6 font-para;
+    @apply font-para;
     line-height: 1.6;
 
     &:not(:last-of-type) {
@@ -48,7 +48,7 @@
 
     @screen 414 {
       line-height: 1.6;
-      @apply text-h5;
+      @apply text-h6;
     }
   }
 }
