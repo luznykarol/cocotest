@@ -38,7 +38,7 @@ const Navbar = () => {
     <>
       <header className=' container-lg' id='header'>
         <nav className='navigation'>
-          <div className='navigation__inner flex justify-between 1070:justify-end items-start'>
+          <div className='navigation__inner flex justify-between 900:justify-end items-start'>
             <>
               <ReactSVG
                 className='navigation__logo'
@@ -49,7 +49,7 @@ const Navbar = () => {
                   ' ' +
                   (open ? 'navigation__list--open' : 'navigation__list--closed')
                 }>
-                <div className='flex flex-col 1070:flex-row '>
+                <div className='flex flex-col 900:flex-row '>
                   {' '}
                   <Link
                     onClick={() => setOpen(false)}

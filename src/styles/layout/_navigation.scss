@@ -10,7 +10,7 @@ header {
   z-index: 2000;
   padding: 15px 0 0 0;
 
-  @screen md {
+  @screen 900 {
     padding: 25px 0 0 0;
   }
 
@@ -29,7 +29,7 @@ header {
       }
     }
 
-    @screen 1070 {
+    @screen 900 {
       @apply absolute;
       left: 30px;
     }
@@ -58,7 +58,7 @@ header {
       top: -200%;
     }
 
-    @screen 1070 {
+    @screen 900 {
       padding: 0;
       background: transparent;
       @apply flex;
@@ -83,7 +83,7 @@ header {
         }
       }
 
-      @screen 1070 {
+      @screen 900 {
         @apply hidden;
       }
     }
@@ -94,7 +94,7 @@ header {
     padding-bottom: 5px;
     font-size: 2rem;
     cursor: pointer;
-    @screen 1070 {
+    @screen 900 {
       @apply text-base font-para uppercase;
       &:after {
         transform: scaleX(0);
@@ -256,7 +256,7 @@ header {
   cursor: pointer;
   display: block;
 
-  @screen md {
+  @screen 900 {
     right: 30px;
   }
 
@@ -293,10 +293,10 @@ header {
       }
     }
   }
-  @media (min-width: 1070px) {
+  @media (min-width: 900px) {
     display: none;
   }
-  @screen 1070 {
+  @screen 900 {
     right: 30px;
   }
 }

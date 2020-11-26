@@ -54,7 +54,7 @@ const TemplateWrapper = ({ children }) => {
             : 'relative h-screen bg-green'
         }`}>
         <Navbar />
-        <main className='wrapper 1070:pt-hero pt-0'>{children}</main>
+        <main className='wrapper 900:pt-hero pt-0'>{children}</main>
         <Footer />
       </div>
     </div>
